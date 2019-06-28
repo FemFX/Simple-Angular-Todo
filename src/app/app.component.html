@@ -1,0 +1,12 @@
+<h3 class="text-center">{{ title }}</h3> 
+<div class="container">
+  <input type="text" class="form-control" placeholder="Add task...">
+  <button class="btn btn-primary btn-block" (click)="addTodo()">Add</button>
+</div>
+
+<br>
+<div class="container">
+  <ul *ngFor="let todo of todos">
+    <li *ngIf="todo.done" class="alert alert-danger">{{ todo.label }} <span (click)="todo.done = !todo.done" class="delete">X</span></li>
+  </ul>
+</div>
